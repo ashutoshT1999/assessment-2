@@ -10,19 +10,19 @@ import { DialogComponent } from '../dialog/dialog.component';
 })
 export class PersonComponent implements OnInit {
   
-  student:person[]=[
-    {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
-    {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
-    {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
-    {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
-    {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
-    {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
-    {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
-    {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
-    {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
-    {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"}
+  // student:person[]=[
+  //   {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
+  //   {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
+  //   {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
+  //   {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
+  //   {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
+  //   {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
+  //   {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
+  //   {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
+  //   {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"},
+  //   {fname:"ashu",mname:"",lname:"tiwari",dep:"btech",gender:"male",dob:"20/2/2000",address:"kanpur",pincode:"208012"}
 
-  ];
+  // ];
   constructor(public dialog: MatDialog) { }
    
   openDialog() {
@@ -36,7 +36,7 @@ export class PersonComponent implements OnInit {
   }
   popup()
   {
-
+    alert("Kindly fill the form correctly to submit");
   }
 
 }

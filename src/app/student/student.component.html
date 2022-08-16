@@ -1,1 +1,38 @@
-<p>student works!</p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Studentid">
+        <th mat-header-cell *matHeaderCellDef> Studentid </th>
+        <td mat-cell *matCellDef="let element"> {{element.Studentid}} </td>
+    </ng-container>
+    <ng-container matColumnDef="firstname">
+        <th mat-header-cell *matHeaderCellDef> fullname</th>
+        <td mat-cell *matCellDef="let element"> {{element.firstname+" "+element.middlename+" "+element.lastname}} </td>
+    </ng-container>
+    <ng-container matColumnDef="class">
+        <th mat-header-cell *matHeaderCellDef> class </th>
+        <td mat-cell *matCellDef="let element"> {{element.class}} </td>
+    </ng-container>
+    <ng-container matColumnDef="rollno">
+        <th mat-header-cell *matHeaderCellDef> rollno </th>
+        <td mat-cell *matCellDef="let element"> {{element.rollno}} </td>
+    </ng-container>
+    <ng-container matColumnDef="math">
+        <th mat-header-cell *matHeaderCellDef> math </th>
+        <td mat-cell *matCellDef="let element"> {{element.math}} </td>
+    </ng-container>
+    <ng-container matColumnDef="english">
+        <th mat-header-cell *matHeaderCellDef> english </th>
+        <td mat-cell *matCellDef="let element"> {{element.english}} </td>
+    </ng-container>
+    <ng-container matColumnDef="hindi">
+        <th mat-header-cell *matHeaderCellDef>hindi </th>
+        <td mat-cell *matCellDef="let element"> {{element.hindi}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
