@@ -9,18 +9,18 @@ import { person } from '../interface/interfaceperson.component';
 export class StudentComponent implements OnInit {
 
   student: any[] = [
-    { Studentid: 1, firstname: "ashu", middlename: "", lastname: "tiwari", class: "X", rollno: 23, math: 70, english: 50, hindi: 70 },
+    { Studentid: 1, firstname: "ashu", middlename: "gg", lastname: "tiwari", class: "X", rollno: 23, math: 20, english: 50, hindi: 70 },
     { Studentid: 2, firstname: "ashu", middlename: "", lastname: "tiwari", class: "X", rollno: 23, math: 70, english: 50, hindi: 70 },
-    { Studentid: 3, firstname: "ashu", middlename: "", lastname: "tiwari", class: "X", rollno: 23, math: 70, english: 50, hindi: 70 },
-    { Studentid: 4, firstname: "ashu", middlename: "", lastname: "tiwari", class: "X", rollno: 23, math: 70, english: 50, hindi: 70 },
+    { Studentid: 3, firstname: "ashu", middlename: "", lastname: "tiwari", class: "X", rollno: 23, math: 70, english: 20, hindi: 20 },
+    { Studentid: 4, firstname: "ashu", middlename: "gg", lastname: "tiwari", class: "X", rollno: 23, math: 70, english: 50, hindi: 70 },
     { Studentid: 5, firstname: "ashu", middlename: "", lastname: "tiwari", class: "X", rollno: 23, math: 70, english: 50, hindi: 70 },
-    { Studentid: 6, firstname: "ashu", middlename: "", lastname: "tiwari", class: "X", rollno: 23, math: 70, english: 50, hindi: 70 },
-    { Studentid: 7, firstname: "ashu", middlename: "", lastname: "tiwari", class: "X", rollno: 23, math: 70, english: 50, hindi: 70 },
+    { Studentid: 6, firstname: "ashu", middlename: "", lastname: "tiwari", class: "X", rollno: 23, math: 70, english: 20, hindi: 70 },
+    { Studentid: 7, firstname: "ashu", middlename: "gg", lastname: "tiwari", class: "X", rollno: 23, math: 70, english: 50, hindi: 70 },
     { Studentid: 8, firstname: "ashu", middlename: "", lastname: "tiwari", class: "X", rollno: 23, math: 70, english: 50, hindi: 70 },
-    { Studentid: 9, firstname: "ashu", middlename: "", lastname: "tiwari", class: "X", rollno: 23, math: 70, english: 50, hindi: 70 },
-    { Studentid: 10, firstname: "ashu", middlename: "", lastname: "tiwari", class: "X", rollno: 23, math: 70, english: 50, hindi: 70 }
+    { Studentid: 9, firstname: "ashu", middlename: "", lastname: "tiwari", class: "X", rollno: 23, math: 20, english: 50, hindi: 70 },
+    { Studentid: 10, firstname: "ashu", middlename: "gg", lastname: "tiwari", class: "X", rollno: 23, math: 70, english: 50, hindi: 20 }
   ];
-  displayedColumns: string[] = ['Studentid', 'firstname',"class", "rollno", "math", "english", "hindi"];
+  displayedColumns: string[] = ['Studentid', 'firstname',"class", "rollno", "math", "english", "hindi","total"];
   dataSource = this.student;
   constructor() { }
 
