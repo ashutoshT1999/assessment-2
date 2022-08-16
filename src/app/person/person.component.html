@@ -1,46 +1,74 @@
-<form>
-    <div class="mb-3">
-        <label for="fname" class="form-label">First name</label>
-        <input type="text" class="form-control" id="fname">
-    </div>
-    <div class="mb-3">
-        <label for="mname" class="form-label">Middle name</label>
-        <input type="text" class="form-control" id="mname">
-    </div>
-    <div class="mb-3">
-        <label for="lname" class="form-label">Last name</label>
-        <input type="text" class="form-control" id="lname">
-    </div>
-    <div class="mb-3">
-        <label for="dep" class="form-label">Department</label>
-        <select name="dep" id="dep" class="form-control">
-            <option value="-1" disabled selected>select department</option>
-            <option value="0">IT</option>
-            <option value="1">HR</option>
-            <option value="2">Payroll</option>
-            <option value="3">Networking</option>
-            <option value="3">Admin</option>
-        </select>
-    </div>
-    <div class="mb-3">
-        <label for="gender" class="form-label">Gender</label>
-        <select name="gender" id="gender" class="form-control">
-            <option value="-1" disabled selected>select gender</option>
-            <option value="0">MALE</option>
-            <option value="1">FEMALE</option>
-        </select>
-    </div>
-    <div class="mb-3">
-        <label for="dob" class="form-label">Select DOB</label>
-        <input type="date" id="dob" class="form-control" >
-    </div>
-    <div class="mb-3">
-        <label for="address" class="form-label">Address</label>
-        <input type="text" class="form-control" id="address">
-    </div>
-    <div class="mb-3">
-        <label for="pincode" class="form-label">Pincode</label>
-        <input type="text" class="form-control" id="pincode">
-    </div>
-
-</form>
+<div class="container" style="width: 300px;">
+    <form #info="ngForm" (ngSubmit)="forminfo(info)">
+        <div class="mb-3">
+            <label for="fname" class="form-label">First name</label>
+            <input type="text" class="form-control" id="fname" name="fname" ngModel required #firstname="ngModel">
+            <mat-error *ngIf="firstname.touched && firstname.invalid">
+                <span style="color: red">Firstname is required</span>
+            </mat-error>
+        </div>
+        <div class="mb-3">
+            <label for="mname" class="form-label">Middle name</label>
+            <input type="text" class="form-control" id="mname" name="nmane" ngModel required #middlename="ngModel">
+        </div>
+        <div class="mb-3">
+            <label for="lname" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="lname" name="lname" ngModel required #lastname="ngModel">
+            <mat-error *ngIf="lastname.touched && lastname.invalid">
+                <span style="color: red">lastname is required</span>
+            </mat-error>
+        </div>
+        <div class="mb-3">
+            <label for="dep" class="form-label">Department</label>
+            <select name="dep" id="dep" name="dep" ngModel required #department="ngModel">
+                <option value="-1" disabled>select department</option>
+                <option value="0">IT</option>
+                <option value="1">HR</option>
+                <option value="2">Payroll</option>
+                <option value="3">Networking</option>
+                <option value="3">Admin</option>
+            </select>
+            <mat-error *ngIf="department.touched && department.invalid">
+                <span style="color: red">department is required</span>
+            </mat-error>
+        </div>
+        <div class="mb-3">
+            <label for="gender" class="form-label">Gender</label>
+            <select name="gender" id="gender" name="gender" ngModel required #gender="ngModel">
+                <option value="-1" disabled>select gender</option>
+                <option value="0">MALE</option>
+                <option value="1">FEMALE</option>
+            </select>
+            <mat-error *ngIf="gender.touched && gender.invalid">
+                <span style="color: red">gender is required</span>
+            </mat-error>
+        </div>
+        <div class="mb-3">
+            <label for="dob" class="form-label">Select DOB</label>
+            <input type="date" id="dob" class="form-control" name="dob" ngModel required #date="ngModel">
+            <mat-error *ngIf="date.touched && date.invalid">
+                <span style="color: red">date is required</span>
+            </mat-error>
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" id="address" name="address" ngModel required #address="ngModel">
+            <mat-error *ngIf="address.touched && address.invalid">
+                <span style="color: red">address is required</span>
+            </mat-error>
+        </div>
+        <div class="mb-3">
+            <label for="pincode" class="form-label">Pincode</label>
+            <input type="text" class="form-control" id="pincode" name="pincode" ngModel required #pin="ngModel">
+            <mat-error *ngIf="pin.touched && pin.invalid">
+                <span style="color: red">pin is required</span>
+            </mat-error>
+            <mat-error *ngIf="pin.dirty && pin.value.length!=6">
+                <span style="color: red"> pin must be 6 digits only</span>
+            </mat-error>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-outline-primary" *ngIf="info.valid" (click)="openDialog()">Submit</button>
+        </div>
+    </form>
+</div>
