@@ -24,4 +24,6 @@ export class PersonComponent implements OnInit {
     alert("Kindly fill the form correctly to submit");
   }
 
+  isnum:number=NaN;
+
 }

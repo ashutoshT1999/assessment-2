@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Code</th>
+            <th scope="col">Fullname</th>
+            <th scope="col">Department</th>
+            <th scope="col">Pincode</th>
+            <th scope="col">Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of empdata" class="col">
+            <td><input type="text" value="{{emp.code}}"></td>
+            <td><input type="text" value="{{emp.firstname+' '+emp.middlename+' '+emp.lastname}}"> </td>
+            <td><input type="text" value="{{emp.department}}"></td>
+            <td><input type="text" value="{{emp.pincode}}"></td>
+            <td><input type="text" value="{{emp.gender}}"></td>
+        </tr>
+    </tbody>
+    <button class="btn btn-outline-secondary" [routerLink]="['']">Back to List</button>
+    <button class="btn btn-outline-success" (click)="openDialog('0ms', '0ms')">Save</button>
+</table>

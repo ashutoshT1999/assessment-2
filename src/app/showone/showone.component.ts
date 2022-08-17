@@ -15,9 +15,12 @@ export class ShowoneComponent implements OnInit {
   studentIDbycode: string="";
   studentbyid: any[] = [];
   ngOnInit(): void {
-    this.studentID = this._route.snapshot.paramMap.get('id');
-    this.studentIDbycode = this._route.snapshot.paramMap.get('code') as string;
-    this._route.snapshot.queryParamMap.get('std');
+    this.studentID = this._route.snapshot.paramMap.get('id');//simple
+
+    this.studentIDbycode = this._route.snapshot.paramMap.get('code') as string;//optional
+
+    this._route.snapshot.queryParamMap.has('std');//query
+
     this.studentbyid = this._studentbyiddata.getstdbyid(this.studentID);
   }
 

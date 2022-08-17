@@ -14,6 +14,12 @@ import { DialogComponent } from './dialog/dialog.component';
 import { MatTableModule } from '@angular/material/table';
 import { ShowoneComponent } from './showone/showone.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { EmployeeComponent } from './employee/employee.component';
+import { ViewemployeeComponent } from './viewemployee/viewemployee.component';
+import { EditemployeeComponent } from './editemployee/editemployee.component';
+import { DialogconformationComponent } from './dialogconformation/dialogconformation.component';
+import { DialogdeleteComponent } from './dialogdelete/dialogdelete.component';
 
 
 @NgModule({
@@ -23,12 +29,17 @@ import { MatNativeDateModule } from '@angular/material/core';
     StudentComponent,
     DialogComponent,
     ShowoneComponent,
+    EmployeeComponent,
+    ViewemployeeComponent,
+    EditemployeeComponent,
+    DialogconformationComponent,
+    DialogdeleteComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, MatFormFieldModule, MatDatepickerModule, FormsModule, MatDialogModule, MatTableModule, MatNativeDateModule, BrowserAnimationsModule
+    BrowserAnimationsModule,MatInputModule, MatFormFieldModule, MatDatepickerModule, FormsModule, MatDialogModule, MatTableModule, MatNativeDateModule, BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
