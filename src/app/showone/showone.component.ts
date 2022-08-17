@@ -9,12 +9,15 @@ import { studentservice } from '../service/service.compnent';
   providers: [studentservice]
 })
 export class ShowoneComponent implements OnInit {
-
+  
   constructor(private _route: ActivatedRoute, public _studentbyiddata: studentservice) { }
   studentID: string | null = "";
+  studentIDbycode: string="";
   studentbyid: any[] = [];
   ngOnInit(): void {
     this.studentID = this._route.snapshot.paramMap.get('id');
+    this.studentIDbycode = this._route.snapshot.paramMap.get('code') as string;
+    this._route.snapshot.queryParamMap.get('std');
     this.studentbyid = this._studentbyiddata.getstdbyid(this.studentID);
   }
 

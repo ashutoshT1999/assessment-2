@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PersonComponent } from './person/person.component';
 import { StudentComponent } from './student/student.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 import { MatTableModule } from '@angular/material/table';
 import { ShowoneComponent } from './showone/showone.component';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { ShowoneComponent } from './showone/showone.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, MatFormFieldModule, MatDatepickerModule, FormsModule, MatDialogModule, MatTableModule 
+    BrowserAnimationsModule, MatFormFieldModule, MatDatepickerModule, FormsModule, MatDialogModule, MatTableModule, MatNativeDateModule, BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
