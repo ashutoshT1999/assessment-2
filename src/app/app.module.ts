@@ -9,22 +9,24 @@ import { StudentComponent } from './student/student.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule } from '@angular/forms';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
-import {MatTableModule} from '@angular/material/table';
-
+import { MatTableModule } from '@angular/material/table';
+import { ShowoneComponent } from './showone/showone.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonComponent,
     StudentComponent,
-    DialogComponent
+    DialogComponent,
+    ShowoneComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, MatFormFieldModule, MatDatepickerModule, FormsModule,MatDialogModule,MatTableModule
+    BrowserAnimationsModule, MatFormFieldModule, MatDatepickerModule, FormsModule, MatDialogModule, MatTableModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

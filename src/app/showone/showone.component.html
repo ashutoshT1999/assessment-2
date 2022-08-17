@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th class="col">Studentid</th>
+            <th scope="col">Fullname</th>
+            <th scope="col">class</th>
+            <th scope="col">rollno</th>
+            <th scope="col">math</th>
+            <th scope="col">english</th>
+            <th scope="col">hindi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let show of studentbyid">
+            <td>{{show.Studentid}}</td>
+            <td>{{show.firstname +" "+ show.middlename +" "+ show.lastname}}</td>
+            <td>{{show.class}}</td>
+            <td>{{show.rollno}}</td>
+            <td>{{show.math}}</td>
+            <td>{{show.english}}</td>
+            <td>{{show.hindi}}</td>
+        </tr>
+    </tbody>
+</table>
