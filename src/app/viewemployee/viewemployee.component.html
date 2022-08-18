@@ -1,21 +1,16 @@
-<table class="table table-dark">
-  <thead>
-    <tr>
-      <th scope="row">Code</th>
-      <th scope="row">Fullname</th>
-      <th scope="row">Department</th>
-      <th scope="row">Pincode</th>
-      <th scope="row">Gender</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let emp of empdata" scope="row">
-      <td>{{emp.code}}</td>
-      <td>{{emp.firstname+" "+emp.middlename+" "+emp.lastname}}</td>
-      <td>{{emp.department}}</td>
-      <td>{{emp.pincode}}</td>
-      <td>{{emp.gender}}</td>
-    </tr>
-  </tbody>
-  <button class="btn btn-outline-secondary" [routerLink]="['']">Back to List</button>
-</table>
+<div class="container" style="width:600px">
+  <div class="d-flex flex-column">
+    <ng-container *ngFor="let emp of empdata">
+      <label for="code">Code :{{emp.code}} </label>
+      <mat-divider></mat-divider>
+      <label for="code">Fullname : {{emp.firstname+" "+emp.middlename+" "+emp.lastname}}</label>
+      <mat-divider></mat-divider>
+      <label for="code">Department : {{emp.department}} </label>
+      <mat-divider></mat-divider>
+      <label for="code">Pincode :{{emp.pincode}} </label>
+      <mat-divider></mat-divider>
+      <label for="code"> Gender : {{emp.gender}}</label>
+    </ng-container>
+    <button class="btn btn-outline-secondary" [routerLink]="['']">Back to List</button>
+  </div>
+</div>

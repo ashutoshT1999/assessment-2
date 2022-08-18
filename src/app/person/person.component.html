@@ -1,92 +1,118 @@
-<div class="container" style="width: 300px;">
+<div class="container form">
     <form #info="ngForm" (ngSubmit)="forminfo(info)">
-        <div class="mb-3">
-            <label for="fname" class="form-label">First name</label>
-            <input type="text" class="form-control" id="fname" name="fname" ngModel required #firstname="ngModel">
-            <mat-error *ngIf="firstname.touched && firstname.invalid">
-                <span style="color: red">Firstname is required</span>
-            </mat-error>
+        <div class="d-flex justify-content-around">
+            <div class="mb-3">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Firstname</mat-label>
+                    <input matInput name="fname" ngModel required #firstname="ngModel">
+                </mat-form-field>
+                <mat-error *ngIf="firstname.touched && firstname.invalid">
+                    <span style="color: red">Firstname is required</span>
+                </mat-error>
+            </div>
+            <div class="mb-3">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Middlename</mat-label>
+                    <input matInput name="mnane" ngModel #middlename="ngModel">
+                </mat-form-field>
+
+            </div>
+            <div class="mb-3">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Lastname</mat-label>
+                    <input matInput name="lname" ngModel required #lastname="ngModel">
+                </mat-form-field>
+                <mat-error *ngIf="lastname.touched && lastname.invalid">
+                    <span style="color: red">lastname is required</span>
+                </mat-error>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="mname" class="form-label">Middle name</label>
-            <input type="text" class="form-control" id="mname" name="nmane" ngModel #middlename="ngModel">
+        <div class="d-flex justify-content-around">
+            <div class="mb-3">
+                <mat-form-field appearance="fill" name="dep" ngModel required #department="ngModel">
+                    <mat-label>Department</mat-label>
+                    <mat-select [formControl]="selected" [errorStateMatcher]="matcher">
+                        <mat-option value="invalid" selected>select options</mat-option>
+                        <mat-option value="valid">IT</mat-option>
+                        <mat-option value="valid">HR</mat-option>
+                        <mat-option value="valid">Payroll</mat-option>
+                        <mat-option value="valid">Networking</mat-option>
+                        <mat-option value="valid">Admin</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="selected.hasError('required')">You must make a selection</mat-error>
+                    <mat-error *ngIf="selected.hasError('pattern') && !selected.hasError('required')">
+                        Your selection is invalid
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="mb-3">
+                <mat-form-field appearance="fill" name="gender" ngModel required #gender="ngModel">
+                    <mat-label>Department</mat-label>
+                    <mat-select [formControl]="selected2" [errorStateMatcher]="matcher2">
+                        <mat-option value="invalid">select options</mat-option>
+                        <mat-option value="valid">Male</mat-option>
+                        <mat-option value="valid">Female</mat-option>
+                        <mat-error *ngIf="selected2.hasError('required')">You must make a selection</mat-error>
+                        <mat-error *ngIf="selected2.hasError('pattern') && !selected2.hasError('required')">
+                            Your selection is invalid
+                        </mat-error>
+                    </mat-select>
+                </mat-form-field>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="lname" class="form-label">Last name</label>
-            <input type="text" class="form-control" id="lname" name="lname" ngModel required #lastname="ngModel">
-            <mat-error *ngIf="lastname.touched && lastname.invalid">
-                <span style="color: red">lastname is required</span>
-            </mat-error>
+        <div class="d-flex justify-content-around">
+            <div class="">
+                <mat-form-field appearance="fill" class="example-form-field">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="datepicker" name="dob" ngModel required #date="ngModel">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #datepicker>
+                        <mat-datepicker-actions>
+                            <button mat-button matDatepickerCancel>Cancel</button>
+                            <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                        </mat-datepicker-actions>
+                    </mat-datepicker>
+                </mat-form-field>
+                <mat-error *ngIf="date.touched && date.invalid">
+                    <span style="color: red">date is required</span>
+                </mat-error>
+            </div>
+            <div class="">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Address</mat-label>
+                    <input matInput name="address" ngModel required #address="ngModel">
+                </mat-form-field>
+                <mat-error *ngIf="address.touched && address.invalid">
+                    <span style="color: red">address is required</span>
+                </mat-error>
+            </div>
+            <div class="mb-3">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Pincode</mat-label>
+                    <input matInput minlength="6" maxlength="6" name="pincode" ngModel required #pin="ngModel">
+                </mat-form-field>
+                <mat-error *ngIf="pin.touched && pin.value==''">
+                    <span style="color: red">pin is required</span>
+                </mat-error>
+                <mat-error *ngIf="pin.dirty && (pin.errors?.['minlength'])">
+                    <span style="color: red"> pin must be 6 digits only</span>
+                </mat-error>
+                <mat-error *ngIf="(pin.dirty && isnumber(pin.value)===false)">
+                    <span style="color: red"> pin must be a<strong> number</strong></span>
+                </mat-error>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="dep" class="form-label">Department</label>
-            <select name="dep" id="dep" name="dep" ngModel required #department="ngModel">
-                <option value="-1" disabled>select department</option>
-                <option value="0">IT</option>
-                <option value="1">HR</option>
-                <option value="2">Payroll</option>
-                <option value="3">Networking</option>
-                <option value="3">Admin</option>
-            </select>
-            <mat-error *ngIf="department.touched && department.invalid">
-                <span style="color: red">department is required</span>
-            </mat-error>
+        <div class="d-flex justify-content-around">
+            <div class="mb-3">
+                <button type="submit" class="btn btn-outline-warning" *ngIf="info.invalid && isnumber(pin.value)===false" (click)="popup()">Submit</button>
+                <button type="submit" class="btn btn-outline-warning" *ngIf="info.invalid && isnumber(pin.value)===true"
+                    (click)="popup()">Submit</button>
+                <button type="submit" class="btn btn-outline-warning" *ngIf="info.valid && isnumber(pin.value)===false"
+                    (click)="popup()">Submit</button>
+                <button type="button" class="btn btn-outline-primary" *ngIf="info.valid && isnumber(pin.value)===true"
+                    (click)="openDialog()">Submit</button>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="gender" class="form-label">Gender</label>
-            <select name="gender" id="gender" name="gender" ngModel required #gender="ngModel">
-                <option value="-1" disabled>select gender</option>
-                <option value="0">MALE</option>
-                <option value="1">FEMALE</option>
-            </select>
-            <mat-error *ngIf="gender.touched && gender.invalid">
-                <span style="color: red">gender is required</span>
-            </mat-error>
-        </div>
-        <div class="">
-            <label for="dob" class="form-label">Select DOB</label>
-            <input type="date" id="dob" class="form-control" name="dob" ngModel required #date="ngModel">
-            <mat-error *ngIf="date.touched && date.invalid">
-                <span style="color: red">date is required</span>
-            </mat-error>
-        </div>
-        <div class="">
-            <label for="address" class="form-label">Address</label>
-            <input type="text" class="form-control" id="address" name="address" ngModel required #address="ngModel">
-            <mat-error *ngIf="address.touched && address.invalid">
-                <span style="color: red">address is required</span>
-            </mat-error>
-        </div>
-        <div class="">
-            <label for="pincode" class="form-label">Pincode</label>
-            <input type="text" minlength="6" maxlength="6" class="form-control" id="pincode" name="pincode" ngModel
-                required #pin="ngModel">
-            <mat-error *ngIf="pin.touched && pin.invalid">
-                <span style="color: red">pin is required</span>
-            </mat-error>
-            <mat-error *ngIf="pin.dirty && (pin.errors?.['minlength'])">
-                <span style="color: red"> pin must be 6 digits only</span>
-            </mat-error>
-            <mat-error *ngIf="(pin.dirty && (pin.value)!=isnum)">
-                <span style="color: red"> pin must be a<strong> number</strong></span>
-            </mat-error>
-        </div>
-        <div class="mb-3">
-            <button type="submit" class="btn btn-outline-warning" *ngIf="info.invalid" (click)="popup()">Submit</button>
-            <button type="button" class="btn btn-outline-primary" *ngIf="info.valid"
-                (click)="openDialog()">Submit</button>
-        </div>
-        <!-- <mat-form-field appearance="fill" class="example-form-field">
-            <mat-label>Choose a date</mat-label>
-            <input matInput [matDatepicker]="datepicker">
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
-            <mat-datepicker #datepicker>
-                <mat-datepicker-actions>
-                    <button mat-button matDatepickerCancel>Cancel</button>
-                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
-                </mat-datepicker-actions>
-            </mat-datepicker>
-        </mat-form-field> -->
     </form>
 </div>

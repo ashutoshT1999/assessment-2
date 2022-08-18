@@ -7,3 +7,9 @@
 mat-form-field {
   margin-right: 12px;
 }
+
+.form{
+     width: 700px;
+     height: 300px;
+     margin-top: 200px;
+}

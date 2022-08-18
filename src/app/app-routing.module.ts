@@ -9,9 +9,9 @@ import { ViewemployeeComponent } from './viewemployee/viewemployee.component';
 
 const routes: Routes = [
   { path:"", component: EmployeeComponent },
-  // { path: "person", component: PersonComponent },
-  // { path: "student", component: StudentComponent },
-  // { path: "showone/:id", component: ShowoneComponent },
+  { path: "person", component: PersonComponent },
+  { path: "student", component: StudentComponent },
+  { path: "showone/:id", component: ShowoneComponent },
   { path: "showview/:id", component: ViewemployeeComponent },
   { path: "showedit/:id", component: EditemployeeComponent }
 
